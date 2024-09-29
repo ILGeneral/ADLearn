@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Red Rose';
     background-color: #444;
     display: flex;
     justify-content: center;
@@ -10,7 +10,9 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 .container {
+    font-family: 'Red Rose';
     background-color: #5b5b5b;
     width: 350px;
     padding: 30px;
@@ -18,21 +20,25 @@ body {
     text-align: center;
 }
 
+
 h1 {
     color: white;
     font-size: 24px;
     margin-bottom: 20px;
+    font-family: 'Red Rose';
 }
 
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
     border: none;
     border-radius: 5px;
     background-color: #eaeaea;
+    font-family: 'Red Rose';
 }
+
 
 button {
     background-color: black;
@@ -43,6 +49,7 @@ button {
     border-radius: 5px;
     margin-top: 20px;
     font-size: 16px;
+    font-family: 'Red Rose';
 }
 
 button:hover {
@@ -60,6 +67,7 @@ button:hover {
     color: white;
     font-size: 12px;
     text-decoration: none;
+    font-family: 'Red Rose';
 }
 
 .links a:hover {
@@ -75,11 +83,13 @@ button:hover {
     padding: 10px 30px;
     background-color: #222;
     color: white;
+
 }
 
 .header div:first-child {
-    font-size: 32px; /* Increase the font size */
-    font-weight: bold; /* Optional: make it bold */
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Red Rose';
 }
 
 .header a {
@@ -87,6 +97,7 @@ button:hover {
     text-decoration: none;
     font-size: 30px;
     margin: 0 10px;
+    font-family: 'Red Rose';
 }
 
 .header a:hover {
