@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #5b5b5b;
+    width: 350px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #eaeaea;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.links a {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px 30px;
+    background-color: #222;
+    color: white;
+}
+
+.header div:first-child {
+    font-size: 32px; /* Increase the font size */
+    font-weight: bold; /* Optional: make it bold */
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: white;
+}
+
+p a {
+    color: white;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
