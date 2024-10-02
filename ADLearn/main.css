@@ -1,60 +1,137 @@
 body {
-    margin: 0;
     font-family: 'Red Rose';
-    background-color: #444;
+    background-color: #696969; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    width: 100vw;
-    overflow-x: hidden;
-    box-sizing: border-box;
+    flex-direction: column; 
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
     font-family: 'Red Rose';
-    background-color: #5b5b5b;
-    width: 350px;
+    background: #a9a9a9;
+    width: 300px;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 16px;
     text-align: center;
+    margin: auto
 }
 
+.signup-container {
+    text-align: center;
+    font-family: 'Red Rose';
+    background: #a9a9a9;
+    padding: 30px;
+    border-radius: 16px; /* Increased border-radius for rounded edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: auto; /* Center the container */
+}
 
-h1 {
-    color: white;
-    font-size: 24px;
-    margin-bottom: 20px;
+.navbar {
+    background-color: black; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    
+}
+
+.navbar h1 {
+    color: white; 
+    margin: 0; 
     font-family: 'Red Rose';
 }
+.navbar a {
+    color: white; 
+    text-decoration: none; 
+    margin-left: 20px; 
+    border-radius: 4px; /* Add border-radius */
+    padding: 5px 10px; /* Add padding for better click area */
+    font-family: 'Red Rose';
+}
+.navbar a:hover {
+    text-decoration: underline; 
+    background-color: #444; /* Optional hover background */
+}
 
+.h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Red Rose'; 
+}
+
+input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 90%;
     padding: 10px;
     margin: 10px 0 20px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #eaeaea;
     font-family: 'Red Rose';
 }
 
-
-button {
+input[type="submit"] {
     background-color: black;
     color: white;
-    width: 100%;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
     font-size: 16px;
     font-family: 'Red Rose';
 }
-
-button:hover {
+input[type="submit"]:hover {
     background-color: #333;
     cursor: pointer;
+}
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-link p {
+    color: rgb(0, 0, 0);
+}
+
+.login-link a {
+    color: #ffffff; /* Fixed color code */
+    text-decoration: none;
+    font-family: 'Red Rose';
+}
+
+.login-link a:hover {
+    text-decoration: underline; 
+}
+
+
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link p {
+    color: rgb(0, 0, 0);
+}
+
+.signup-link a {
+    color: #ffffff; /* Fixed color code */
+    text-decoration: none;
+    font-family: 'Red Rose';
+}
+
+.signup-link a:hover {
+    text-decoration: underline; 
+}
+
+@media (max-width: 600px) {
+    .signup-container {
+        width: 90%; /* Make container responsive */
+    }
 }
 
 .links {
@@ -64,7 +141,7 @@ button:hover {
 }
 
 .links a {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 12px;
     text-decoration: none;
     font-family: 'Red Rose';
@@ -74,45 +151,3 @@ button:hover {
     text-decoration: underline;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 10px 30px;
-    background-color: #222;
-    color: white;
-
-}
-
-.header div:first-child {
-    font-size: 32px;
-    font-weight: bold;
-    font-family: 'Red Rose';
-    margin-left: 20px;
-}
-
-.header a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 0 20px;
-    font-family: 'Red Rose';
-}
-
-.header a:hover {
-    text-decoration: underline;
-}
-
-p {
-    color: white;
-}
-
-p a {
-    color: white;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
