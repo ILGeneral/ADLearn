@@ -158,25 +158,29 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    height: 100vh;
 }
 
 .left-section, .right-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+    grid-gap: 30px; /* Space between the buttons */
 }
 
 .left-section button, .right-section button {
     background-color: #d3d3d3;
     color: black;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 15px 30px;
+    border: none;   
+    border-radius: 50px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%; /* Ensures the button takes up the full grid column space */
+    max-width: 180px; /* Sets a max-width so the buttons don't get too large */ 
+    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Red Rose';
 }
 
 .left-section button:hover, .right-section button:hover {
@@ -206,4 +210,5 @@ input[type="submit"]:hover {
     .separator {
         display: none;
     }
+
 }
