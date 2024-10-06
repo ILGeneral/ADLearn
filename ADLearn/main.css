@@ -151,3 +151,59 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+
+
+
+.container_home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.left-section button, .right-section button {
+    background-color: #d3d3d3;
+    color: black;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.left-section button:hover, .right-section button:hover {
+    background-color: #bbbbbb;
+}
+
+.separator {
+    width: 2px;
+    height: 600px;
+    background-color: #cccccc;
+    margin: 0 40px;
+}
+
+.programming {
+    background-color: #a8a8a8;
+}
+
+.right-section button {
+    margin-top: 0;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .separator {
+        display: none;
+    }
+}
