@@ -100,12 +100,29 @@ body {
     width: 100%; /* Flexible width */
 }
 
+.delete-button {
+    background-color: #232323;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #f0f0f0;
+}
+
+
 .additional-box {
     background-color: #333;
     border-radius: 15px;
     padding: 80px;
-    flex: 2; /* Takes more space compared to profile-box */
-    width: 100%; /* Flexible width */
+    flex: 2; 
+    width: 100%; 
     height: auto;
     color: white;
     text-align: center;
@@ -113,6 +130,9 @@ body {
     margin-bottom: 20px;
     box-sizing: border-box;
     align-self: flex-end;
+    position: relative;
+    min-height: 150px;
+    max-width: 600px;
 }
 
 .bio-header {
@@ -123,15 +143,30 @@ body {
     margin-left: 20px;
 }
 
-input[type="button"] {
-    background-color: black;
+.edit-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #333;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    width: 125px;
-    font-size: 16px;
-    font-family: 'Red Rose';
+    font-size: 14px;
     transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
 }
