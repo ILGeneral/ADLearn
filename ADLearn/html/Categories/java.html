@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADLearn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Category.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="../homepage.html"><h1>ADLearn</h1></a>
+        <div>
+            <a href="/html/profile_edit.html">Profile</a>
+            <a href="../about.html"> About Us</a>
+            <a href="../login.html"> Logout</a>
+        </div>
+    </div>
+
+    <div class="Center">
+        <h2>Java</h2>
+        <a href="/html/add-post.html" style="text-decoration:none;" class="post-button">Post</a>
+        <div class="post-container" id="postList">
+            <div class="post">
+                <div class="post-details">
+                    <h3 class="post-title">Post Title</h3>
+                    <p class="post-content">This is the post content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function renderPosts() {
+        const postList = document.getElementById("postList");
+    
+        // Extract the category from the current URL
+        const currentCategory = window.location.pathname.split('/').pop().split('.')[0]; // e.g., "c++" or "java"
+    
+        // Fetch posts for the current category from localStorage
+        const posts = JSON.parse(localStorage.getItem(currentCategory)) || [];
+    
+        postList.innerHTML = ""; // Clear existing posts
+    
+        if (posts.length > 0) {
+            posts.forEach((post, index) => {
+                // Create post container
+                const postDiv = document.createElement("div");
+                postDiv.className = "post";
+    
+                // Create delete button
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "delete-button";
+                deleteButton.textContent = "✖"; // Delete icon
+    
+                // Add delete functionality
+                deleteButton.addEventListener("click", () => {
+                    if (confirm("Are you sure you want to delete this post?")) {
+                        posts.splice(index, 1); // Remove the post from the array
+                        localStorage.setItem(currentCategory, JSON.stringify(posts)); // Update localStorage
+                        renderPosts(); // Re-render the posts
+                    }
+                });
+    
+                // Create post header
+                const postHeader = document.createElement("div");
+                postHeader.className = "post-header";
+    
+                // Create profile pic element
+                const profilePic = document.createElement("div");
+                profilePic.className = "profile-pic";
+    
+                // User details and post summary
+                const userDetails = document.createElement("div");
+                userDetails.className = "post-summary";
+    
+                // Replace newline (\n) in the title with <br> for line breaks
+                const formattedTitle = post.title.replace(/\n/g, "<br>");
+                userDetails.innerHTML = formattedTitle; // Set formatted title
+    
+                // Expand/collapse arrow
+                const arrow = document.createElement("div");
+                arrow.className = "arrow";
+                arrow.textContent = "▼"; // Default to collapsed state
+    
+                // Add expand/collapse functionality
+                arrow.addEventListener("click", () => {
+                    const content = postDiv.querySelector(".post-content");
+                    const isExpanded = content.style.display === "block";
+    
+                    // Toggle visibility of the content
+                    content.style.display = isExpanded ? "none" : "block";
+    
+                    // Update arrow text or rotation based on expanded state
+                    arrow.textContent = isExpanded ? "▼" : "▲";
+                });
+    
+                // Append profile picture and header elements
+                postHeader.appendChild(profilePic); // Append profile picture first
+                postHeader.appendChild(userDetails); // Then append title
+                postHeader.appendChild(arrow);
+    
+                // Create post content section
+                const postContent = document.createElement("div");
+                postContent.className = "post-content";
+                postContent.style.display = "none"; // Initially hidden
+                // Replace newlines with <br> tags to preserve them in content
+                postContent.innerHTML = `<p>${post.content.replace(/\n/g, '<br>')}</p>`;
+    
+                // Append header, delete button, and content to the post
+                postDiv.appendChild(deleteButton); // Add delete button to the post
+                postDiv.appendChild(postHeader);
+                postDiv.appendChild(postContent);
+    
+                // Add the complete post to the post list
+                postList.appendChild(postDiv);
+            });
+        } else {
+            postList.innerHTML = "<p style='color: white; text-align: center; font-size: 20px;'>No posts available.</p>";
+        }
+    }
+    
+    // Call renderPosts on page load
+    window.onload = renderPosts;
+</script>
+    
+</body>
+
+</html>
